@@ -1,0 +1,27 @@
+/* =============================================================================
+    Drupal's Messages
+   ========================================================================== */
+
+.messages {
+	clear: both;
+  background-color: #eee;
+  padding: 1em 2em;
+  @include font-size(25px);
+  font-weight: bold;
+  @extend .container;
+  margin: 1em auto;
+
+}
+
+.messages--status {
+
+}
+
+.messages--warning {
+
+}
+
+.messages--error,
+.messages.error {
+
+}

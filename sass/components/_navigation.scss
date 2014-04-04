@@ -1,0 +1,70 @@
+/* =============================================================================
+    Primary Navigation
+   ========================================================================== */
+
+#block-mainnavigation {
+  position: relative;
+  cursor: pointer;
+  &:after {
+    position: absolute;
+    padding: 5px 40px;
+    right: 0;
+    top: 0;
+    font-family: FontAwesome;
+    content: "\f0c9";
+    color: #ccc;
+    cursor: pointer;
+    line-height: 1;
+    @include font-size(50px);
+    @include breakpoint($tablet_narrow) {
+      display: none;
+    }
+  }
+  .menu {
+    //display: none;
+    clear: both;
+    position: relative;
+    padding: 0;
+    a {
+      display: block;
+      color: white;
+      text-decoration: none;
+
+    }
+    li {
+      list-style-type: none;
+      text-align: center;
+      background-color: rgba(#ccc, .8);
+      margin: .5em 1em;
+      @include font-size(25px);
+    }
+    &.js-nav-open {
+      display: block;
+    }
+    &:before {
+      display: block;
+      content: "";
+      position: absolute;
+      height: 60px;
+      width: 1000px;
+      right: 100%;
+      top: 0;
+      background-color: rgba(#000, .8);
+    }
+    @include breakpoint($tablet_narrow) {
+      clear: none;
+      background-color: rgba(#000, .8);
+      margin: 0;
+      display: table;
+      li {
+        display: table-cell;
+        padding: 0 1em 0 0;
+        margin: 0;
+        background-color: transparent;
+      }
+      a {
+        line-height: 60px;
+      }
+    }
+  }
+}

@@ -1,0 +1,19 @@
+/* =============================================================================
+    Layouts
+   ========================================================================== */
+
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+
+body {
+  background-image: url(../images/bg.png);
+}
+
+.container {
+  margin: 0 auto;
+  clear: both;
+    @include breakpoint($normal) {
+      max-width: 1100px;
+    }
+  }

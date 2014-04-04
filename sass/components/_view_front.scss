@@ -1,0 +1,35 @@
+/* =============================================================================
+    View Front (frontpage)
+   ========================================================================== */
+
+.view-front {
+  a {
+    display: block;
+    padding: 2em 1em;
+    @include breakpoint($tablet_narrow) {
+      height: 275px;
+    }
+  }
+  .views-row {
+    padding: 1em;
+    @include breakpoint($tablet_narrow) {
+      vertical-align: top;
+      display: inline-block;
+      margin-right: -4px;
+      width: 50%;
+    }
+    @include breakpoint($tablet_wide) {
+      width: 33.33%;
+    }
+  }
+  .node-article {
+    background-color: white;
+    border: solid 1px #ccc;
+  }
+  .wrap-front {
+    text-align: center;
+  }
+  .wrap-back {
+    display: none;
+  }
+}

@@ -1,0 +1,23 @@
+/* =============================================================================
+    Header
+   ========================================================================== */
+
+header[role='banner'] {
+  clear: both;
+  @include breakpoint($tablet_narrow) {
+    height: 60px;
+  }
+}
+.home-link {
+  float: left;
+  margin: -25px 0 0 1em;
+  border: solid 5px white;
+  position: relative;
+  z-index: 5;
+  img {
+    display: block;
+  }
+  @include breakpoint($tablet_narrow) {
+    margin: -25px 1em 0 0;
+  }
+}

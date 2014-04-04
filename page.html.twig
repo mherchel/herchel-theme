@@ -1,0 +1,56 @@
+<div class="l-container">
+  {{ page.callout_bubble }}
+  <header role="banner" class="clearfix">
+    <div class="container">
+      <a class="home-link" href="/"><img src="/themes/herchel/images/mike_herchel.jpg" alt="Mike's Awesome Picture" /></a>
+      {{ page.header }}
+    </div>
+  </header>
+
+
+  {{ messages }}
+
+  {{ page.help }}
+
+  <main role="main" class="container clearfix">
+    <a id="main-content"></a>{# link is in html.html.twig #}
+
+    <div class="l-content">
+      {{ page.highlighted }}
+
+      {{ title_prefix }}
+      {% if title %}
+        <h1>{{ title }}</h1>
+      {% endif %}
+      {{ title_suffix }}
+
+      {{ tabs }}
+
+      {% if action_links %}
+        <nav class="action-links">{{ action_links }}</nav>
+      {% endif %}
+
+      {{ page.content }}
+
+      {{ feed_icons }}
+    </div>{# /.l-content #}
+
+    {% if page.sidebar_first %}
+      <aside class="l-sidebar-first" role="complementary">
+        {{ page.sidebar_first }}
+      </aside>
+    {% endif %}
+
+    {% if page.sidebar_second %}
+      <aside class="l-sidebar-second" role="complementary">
+        {{ page.sidebar_second }}
+      </aside>
+    {% endif %}
+
+  </main>
+
+  <footer role="contentinfo">
+    {{ page.footer }}
+  </footer>
+
+</div>{# /.l-container #}

@@ -1,0 +1,38 @@
+/* =============================================================================
+    Callout Bubble
+   ========================================================================== */
+
+.region-callout-bubble {
+  padding: 1em 1em 3em 1em;
+  @extend .container;
+  .field-item {
+    padding: 5px 20px;
+    background-color: white;
+    color: #999;
+    border-radius: 20px;
+    display: inline-block;
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 140px; // compensate for the picture
+      border-top: 50px solid white;
+      border-top-color: white;
+      border-left: 0px solid transparent;
+      border-right: 30px solid transparent;
+      @include transform2d(skew(-30deg));
+    }
+  }
+  @include breakpoint($tablet_narrow) {
+    padding: 1em 0 1em 116px;
+    .field-item:after {
+      left: 10px;
+      border-top: 10px solid white;
+      border-top-color: white;
+      border-left: 0px solid transparent;
+      border-right: 20px solid transparent;
+      @include transform2d(skew(-45deg));
+    }
+  }
+}

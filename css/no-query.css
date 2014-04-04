@@ -1,0 +1,426 @@
+/* =============================================================================
+    no-query.scss - all CSS without media queries for IE8 & below
+   ========================================================================== */
+ul.tabs:after, ul.tabs:before {
+  display: table;
+  content: "";
+  clear: both;
+}
+
+/* =============================================================================
+    Base
+   ========================================================================== */
+* {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+body {
+  background-image: url(../images/bg.png);
+  color: #666;
+}
+
+/* =============================================================================
+    Fonts
+   ========================================================================== */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.0.3");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ralewaylight';
+  src: url("../fonts/raleway-light-webfont.eot");
+  src: url("../fonts/raleway-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-light-webfont.woff") format("woff"), url("../fonts/raleway-light-webfont.ttf") format("truetype"), url("../fonts/raleway-light-webfont.svg#ralewaylight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* =============================================================================
+    Forms
+   ========================================================================== */
+button, input[type="submit"] {
+  font-size: 25px;
+  font-size: 1.5625rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea,
+select {
+  max-width: 100%;
+  -webkit-appearance: none;
+  width: 100%;
+  width: auto;
+}
+
+label {
+  display: block;
+}
+label.error {
+  color: red;
+}
+
+form .description {
+  color: #999;
+  font-style: italic;
+  font-size: 14px;
+}
+
+.form-item {
+  padding: 10px 0;
+}
+
+input[type="submit"] {
+  margin-right: 10px;
+}
+input[type="submit"]:last-child {
+  margin-right: 0;
+}
+
+.views-exposed-form .views-exposed-widget .form-submit {
+  margin: 0;
+  margin: 1.4em;
+}
+
+.views-exposed-form .views-exposed-widget {
+  float: none;
+  float: left;
+}
+
+/* Make radio buttons inline */
+.form-item.form-type-radio {
+  display: inline-block;
+  margin-right: 10px;
+}
+.form-item.form-type-radio:last-child {
+  margin-right: 0;
+}
+
+/* =============================================================================
+    Layouts
+   ========================================================================== */
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background-image: url(../images/bg.png);
+}
+
+.container, .region-callout-bubble, .messages {
+  margin: 0 auto;
+  clear: both;
+  max-width: 1100px;
+}
+
+/* =============================================================================
+    Media
+   ========================================================================== */
+img, media {
+  max-width: 100%;
+  height: auto;
+  border: 0;
+}
+
+/* =============================================================================
+    Tables
+   ========================================================================== */
+table {
+  width: 100%;
+  border-color: none;
+}
+table .form-item {
+  margin: 0;
+  padding: 0;
+}
+
+tr.odd,
+tr.even {
+  background-color: transparent;
+}
+
+td {
+  padding: 5px;
+}
+
+th {
+  padding: 5px;
+  background-color: #eee;
+}
+
+fieldset {
+  margin: 5px 0;
+}
+
+/* =============================================================================
+    Typography
+   ========================================================================== */
+html {
+  font-size: 100%;
+}
+
+body {
+  line-height: 1.7;
+  margin: 0;
+}
+
+h1 {
+  font-family: ralewayregular, helvetica, arial, sans-serif;
+  font-size: 32px;
+  font-size: 2rem;
+}
+
+h2 {
+  font-family: ralewaylight, helvetica, arial, sans-serif;
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-family: ralewayregular, helvetica, arial, sans-serif;
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+
+h4 {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+
+div, p, li, blockquote {
+  font-size: 16px;
+  font-size: 1rem;
+}
+
+/* =============================================================================
+    Aside
+   ========================================================================== */
+/* =============================================================================
+    Callout Bubble
+   ========================================================================== */
+.region-callout-bubble {
+  padding: 1em 1em 3em 1em;
+  padding: 1em 0 1em 116px;
+}
+.region-callout-bubble .field-item {
+  padding: 5px 20px;
+  background-color: white;
+  color: #999;
+  border-radius: 20px;
+  display: inline-block;
+  position: relative;
+}
+.region-callout-bubble .field-item:after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 140px;
+  border-top: 50px solid white;
+  border-top-color: white;
+  border-left: 0px solid transparent;
+  border-right: 30px solid transparent;
+  -webkit-transform: skew(-30deg);
+  -moz-transform: skew(-30deg);
+  -ms-transform: skew(-30deg);
+  -o-transform: skew(-30deg);
+  transform: skew(-30deg);
+}
+.region-callout-bubble .field-item:after {
+  left: 10px;
+  border-top: 10px solid white;
+  border-top-color: white;
+  border-left: 0px solid transparent;
+  border-right: 20px solid transparent;
+  -webkit-transform: skew(-45deg);
+  -moz-transform: skew(-45deg);
+  -ms-transform: skew(-45deg);
+  -o-transform: skew(-45deg);
+  transform: skew(-45deg);
+}
+
+/* =============================================================================
+    Comments
+   ========================================================================== */
+/* =============================================================================
+    Footer Section
+   ========================================================================== */
+footer {
+  background: #f0652a;
+  min-height: 300px;
+}
+
+/* =============================================================================
+    Header
+   ========================================================================== */
+header[role='banner'] {
+  clear: both;
+  height: 60px;
+}
+
+.home-link {
+  float: left;
+  margin: -25px 0 0 1em;
+  border: solid 5px white;
+  position: relative;
+  z-index: 5;
+  margin: -25px 1em 0 0;
+}
+.home-link img {
+  display: block;
+}
+
+/* =============================================================================
+    Highlighted Region
+   ========================================================================== */
+.region-highlighted {
+  max-width: 800px;
+  margin: 2em auto 0 auto;
+  padding: 0 1em;
+  text-align: center;
+  color: #f0652a;
+  clear: both;
+  text-shadow: 2px 2px white;
+  margin: 0 auto;
+}
+
+/* =============================================================================
+    Drupal's Messages
+   ========================================================================== */
+.messages {
+  clear: both;
+  background-color: #eee;
+  padding: 1em 2em;
+  font-size: 25px;
+  font-size: 1.5625rem;
+  font-weight: bold;
+  margin: 1em auto;
+}
+
+/* =============================================================================
+    Primary Navigation
+   ========================================================================== */
+#block-mainnavigation {
+  position: relative;
+  cursor: pointer;
+}
+#block-mainnavigation:after {
+  position: absolute;
+  padding: 5px 40px;
+  right: 0;
+  top: 0;
+  font-family: FontAwesome;
+  content: "\f0c9";
+  color: #ccc;
+  cursor: pointer;
+  line-height: 1;
+  font-size: 50px;
+  font-size: 3.125rem;
+  display: none;
+}
+#block-mainnavigation .menu {
+  clear: both;
+  position: relative;
+  padding: 0;
+  clear: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  margin: 0;
+  display: table;
+}
+#block-mainnavigation .menu a {
+  display: block;
+  color: white;
+  text-decoration: none;
+}
+#block-mainnavigation .menu li {
+  list-style-type: none;
+  text-align: center;
+  background-color: rgba(204, 204, 204, 0.8);
+  margin: .5em 1em;
+  font-size: 25px;
+  font-size: 1.5625rem;
+}
+#block-mainnavigation .menu.js-nav-open {
+  display: block;
+}
+#block-mainnavigation .menu:before {
+  display: block;
+  content: "";
+  position: absolute;
+  height: 60px;
+  width: 1000px;
+  right: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+#block-mainnavigation .menu li {
+  display: table-cell;
+  padding: 0 1em 0 0;
+  margin: 0;
+  background-color: transparent;
+}
+#block-mainnavigation .menu a {
+  line-height: 60px;
+}
+
+/* =============================================================================
+    Drupal's Pager
+   ========================================================================== */
+/* =============================================================================
+    Drupal's Tabs (Split by Breakpoint)
+   ========================================================================== */
+ul.tabs {
+  margin-bottom: 1em;
+  border-bottom: 1px solid #bbb;
+  padding: 0;
+}
+ul.tabs > li {
+  list-style: none;
+  float: left;
+  margin-right: 1em;
+  background-color: #eee;
+}
+ul.tabs > li.active {
+  background-color: #ccc;
+}
+ul.tabs > li a {
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  width: 100%;
+}
+
+/* =============================================================================
+    View Front (frontpage)
+   ========================================================================== */
+.view-front a {
+  display: block;
+  padding: 2em 1em;
+  height: 275px;
+}
+.view-front .views-row {
+  padding: 1em;
+  vertical-align: top;
+  display: inline-block;
+  margin-right: -4px;
+  width: 50%;
+  width: 33.33%;
+}
+.view-front .node-article {
+  background-color: white;
+  border: solid 1px #ccc;
+}
+.view-front .wrap-front {
+  text-align: center;
+}
+.view-front .wrap-back {
+  display: none;
+}
