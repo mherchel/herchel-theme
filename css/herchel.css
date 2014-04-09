@@ -31,9 +31,9 @@ body {
 }
 
 @font-face {
-  font-family: 'ralewaylight';
-  src: url("../fonts/raleway-light-webfont.eot");
-  src: url("../fonts/raleway-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/raleway-light-webfont.woff") format("woff"), url("../fonts/raleway-light-webfont.ttf") format("truetype"), url("../fonts/raleway-light-webfont.svg#ralewaylight") format("svg");
+  font-family: 'source_sans_prolight';
+  src: url("../fonts/sourcesanspro-light-webfont.eot");
+  src: url("../fonts/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-light-webfont.woff") format("woff"), url("../fonts/sourcesanspro-light-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-light-webfont.svg#source_sans_prolight") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -135,7 +135,7 @@ body {
 }
 @media (min-width: 75em) {
   .container, .region-callout-bubble, .messages {
-    max-width: 1100px;
+    max-width: 900px;
   }
 }
 
@@ -188,22 +188,23 @@ html {
 body {
   line-height: 1.7;
   margin: 0;
+  font-family: source_sans_prolight, helvetica, arial, sans-serif;
 }
 
 h1 {
-  font-family: ralewayregular, helvetica, arial, sans-serif;
+  font-family: source_sans_prolight, helvetica, arial, sans-serif;
   font-size: 32px;
   font-size: 2rem;
 }
 
 h2 {
-  font-family: ralewaylight, helvetica, arial, sans-serif;
+  font-family: source_sans_prolight, helvetica, arial, sans-serif;
   font-size: 28px;
   font-size: 1.75rem;
 }
 
 h3 {
-  font-family: ralewayregular, helvetica, arial, sans-serif;
+  font-family: source_sans_prolight, helvetica, arial, sans-serif;
   font-size: 22px;
   font-size: 1.375rem;
 }
@@ -213,7 +214,8 @@ h4 {
   font-size: 1.125rem;
 }
 
-div, p, li, blockquote {
+p, li, blockquote {
+  font-family: source_sans_prolight, helvetica, arial, sans-serif;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -222,10 +224,15 @@ div, p, li, blockquote {
     Aside
    ========================================================================== */
 /* =============================================================================
+    Branding
+   ========================================================================== */
+/* =============================================================================
     Callout Bubble
    ========================================================================== */
 .region-callout-bubble {
   padding: 1em 1em 3em 1em;
+  font-size: 12px;
+  font-size: 0.75rem;
 }
 .region-callout-bubble .field-item {
   padding: 5px 20px;
@@ -252,6 +259,8 @@ div, p, li, blockquote {
 }
 @media (min-width: 43.75em) {
   .region-callout-bubble {
+    font-size: 16px;
+    font-size: 1rem;
     padding: 1em 0 1em 116px;
   }
   .region-callout-bubble .field-item:after {
@@ -277,6 +286,7 @@ div, p, li, blockquote {
 footer {
   background: #f0652a;
   min-height: 300px;
+  margin-top: 3em;
 }
 
 /* =============================================================================
@@ -293,7 +303,7 @@ header[role='banner'] {
 
 .home-link {
   float: left;
-  margin: -25px 0 0 1em;
+  margin: -25px 0 1em 1em;
   border: solid 5px white;
   position: relative;
   z-index: 5;
@@ -312,17 +322,12 @@ header[role='banner'] {
    ========================================================================== */
 .region-highlighted {
   max-width: 800px;
-  margin: 2em auto 0 auto;
+  margin: 0 auto;
   padding: 0 1em;
   text-align: center;
   color: #f0652a;
   clear: both;
   text-shadow: 2px 2px white;
-}
-@media (min-width: 43.75em) {
-  .region-highlighted {
-    margin: 0 auto;
-  }
 }
 
 /* =============================================================================
@@ -344,6 +349,8 @@ header[role='banner'] {
 #block-mainnavigation {
   position: relative;
   cursor: pointer;
+  font-family: source_sans_prolight, helvetica, arial, sans-serif;
+  text-transform: uppercase;
 }
 #block-mainnavigation:after {
   position: absolute;
@@ -364,42 +371,56 @@ header[role='banner'] {
   }
 }
 #block-mainnavigation .menu {
+  max-height: 0;
   clear: both;
   position: relative;
   padding: 0;
+  margin: 1em;
+  overflow: hidden;
 }
 #block-mainnavigation .menu a {
   display: block;
-  color: white;
+  color: #fff;
   text-decoration: none;
 }
 #block-mainnavigation .menu li {
   list-style-type: none;
   text-align: center;
   background-color: rgba(204, 204, 204, 0.8);
-  margin: .5em 1em;
+  margin: .5em 0;
   font-size: 25px;
   font-size: 1.5625rem;
 }
 #block-mainnavigation .menu.js-nav-open {
-  display: block;
+  max-height: 500px;
 }
 #block-mainnavigation .menu:before {
   display: block;
   content: "";
   position: absolute;
   height: 60px;
-  width: 1000px;
+  width: 160px;
   right: 100%;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+#block-mainnavigation .menu:after {
+  display: block;
+  content: "";
+  position: absolute;
+  left: 100%;
+  top: 0;
+  border-left: solid 30px rgba(255, 255, 255, 0.8);
+  border-top: solid 30px transparent;
+  border-bottom: solid 30px transparent;
 }
 @media (min-width: 43.75em) {
   #block-mainnavigation .menu {
     clear: none;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
     margin: 0;
     display: table;
+    overflow: visible;
   }
   #block-mainnavigation .menu li {
     display: table-cell;
@@ -409,6 +430,12 @@ header[role='banner'] {
   }
   #block-mainnavigation .menu a {
     line-height: 60px;
+    color: #bbb;
+  }
+}
+@media (min-width: 43.75em) {
+  #block-mainnavigation {
+    cursor: auto;
   }
 }
 
@@ -499,20 +526,27 @@ header[role='banner'] {
 }
 /* =============================================================================
     View Front (frontpage)
+    @todo integrate with modernizr
    ========================================================================== */
+.view-front {
+  /* =============================================================================
+      3d effects
+     ========================================================================== */
+}
 .view-front a {
   display: block;
-  padding: 2em 1em;
+  color: #f0652a;
 }
-@media (min-width: 43.75em) {
-  .view-front a {
-    height: 275px;
-  }
+.view-front h2 {
+  font-size: 25px;
+  font-size: 1.5625rem;
+  margin: 0;
+  line-height: 1.1;
 }
 .view-front .views-row {
   padding: 1em;
 }
-@media (min-width: 43.75em) {
+@media (min-width: 30em) {
   .view-front .views-row {
     vertical-align: top;
     display: inline-block;
@@ -520,18 +554,79 @@ header[role='banner'] {
     width: 50%;
   }
 }
-@media (min-width: 56.25em) {
+@media (min-width: 43.75em) {
   .view-front .views-row {
     width: 33.33%;
   }
 }
-.view-front .node-article {
+.view-front .wrap-front,
+.view-front .wrap-back {
+  padding: 2em 1em;
   background-color: white;
+  text-align: center;
   border: solid 1px #ccc;
 }
-.view-front .wrap-front {
-  text-align: center;
+@media (min-width: 30em) {
+  .view-front .wrap-front,
+  .view-front .wrap-back {
+    height: 240px;
+  }
 }
 .view-front .wrap-back {
+  padding: 1em;
   display: none;
+}
+.view-front .date {
+  color: #ccc;
+}
+@media (min-width: 75em) {
+  .view-front .wrap {
+    position: relative;
+    -webkit-perspective: 1000;
+    -moz-perspective: 1000;
+    -ms-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+  }
+  .view-front .wrap:hover a, .view-front .wrap:focus a {
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
+  .view-front a {
+    -webkit-transform-style: preserve-3d;
+    -moz-transform-style: preserve-3d;
+    -ms-transform-style: preserve-3d;
+    -o-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
+    -moz-transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
+    -o-transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
+    transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
+  }
+  .view-front .wrap-front,
+  .view-front .wrap-back {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .view-front .wrap-front {
+    position: relative;
+  }
+  .view-front .wrap-back {
+    -webkit-transform: rotateX(180deg);
+    -moz-transform: rotateX(180deg);
+    -ms-transform: rotateX(180deg);
+    -o-transform: rotateX(180deg);
+    transform: rotateX(180deg);
+  }
 }

@@ -4,13 +4,10 @@
 
 .region-highlighted {
   max-width: 800px;
-  margin: 2em auto 0 auto;
+  margin: 0 auto;
   padding: 0 1em;
   text-align: center;
   color: $orange;
   clear: both;
   @include text-shadow(2px 2px white);
-  @include breakpoint($tablet_narrow) {
-    margin: 0 auto;
-  }
 }

@@ -1,35 +1,79 @@
 /* =============================================================================
     View Front (frontpage)
+    @todo integrate with modernizr
    ========================================================================== */
 
 .view-front {
   a {
     display: block;
-    padding: 2em 1em;
-    @include breakpoint($tablet_narrow) {
-      height: 275px;
-    }
+    color: $orange
+  }
+  h2 {
+    @include font-size(25px);
+    margin: 0;
+    line-height: 1.1;
   }
   .views-row {
     padding: 1em;
-    @include breakpoint($tablet_narrow) {
+    @include breakpoint($smartphone_wide) {
       vertical-align: top;
       display: inline-block;
       margin-right: -4px;
       width: 50%;
     }
-    @include breakpoint($tablet_wide) {
+    @include breakpoint($tablet_narrow) {
       width: 33.33%;
     }
   }
-  .node-article {
+  .wrap-front,
+  .wrap-back {
+    padding: 2em 1em;
     background-color: white;
-    border: solid 1px #ccc;
-  }
-  .wrap-front {
     text-align: center;
+    border: solid 1px #ccc;
+    @include breakpoint($smartphone_wide) {
+      height: 240px;
+    }
   }
   .wrap-back {
+    padding: 1em;
     display: none;
   }
+  .date {
+    color: #ccc;
+  }
+
+/* =============================================================================
+    3d effects
+   ========================================================================== */
+
+  @include breakpoint($normal) {
+    .wrap {
+      position: relative;
+      @include perspective(1000);
+      &:hover a,
+      &:focus a {
+         @include transform(rotateX(180deg)); 
+      }
+    }
+    a {
+      @include transform-style(preserve-3d);
+      @include transition(all .5s cubic-bezier(.28,.33,.66,1.2)); 
+    }
+    .wrap-front,
+    .wrap-back {
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+      margin: 0;
+      @include backface-visibility(hidden); 
+    }
+    .wrap-front {
+      position: relative;
+    }
+    .wrap-back {
+      @include transform(rotateX(180deg));
+    }
+  } // End breakpoint($normal)
 }

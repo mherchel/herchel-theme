@@ -1,10 +1,21 @@
 <article id="node-{{ node.id }}" class="{{ attributes.class }} clearfix wrap"{{ attributes }}>
   <a href="{{ node_url }}">
     <div class="{{ content_attributes.class}} wrap-front" {{ content_attributes }}>
-      {{ content|without('links') }}
+      {{ content|without('links', 'field_subheading') }}
     </div>
-    <h2{{ title_attributes }} class="wrap-back">
-      {{ label }}
-    </h2>
+    <div class="wrap-back">
+      <h2{{ title_attributes }} class="title">
+        {{ label }}
+      </h2>
+      {% if content.field_subheading %}
+      <p class="subheading">
+        {{ content.field_subheading }}
+      </p>
+      {% endif %}
+      <p class="date">
+        {{ date }}
+      </p>
+    </div>
   </a>
 </article>
+

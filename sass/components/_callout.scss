@@ -4,6 +4,7 @@
 
 .region-callout-bubble {
   padding: 1em 1em 3em 1em;
+  @include font-size(12px);
   @extend .container;
   .field-item {
     padding: 5px 20px;
@@ -25,6 +26,7 @@
     }
   }
   @include breakpoint($tablet_narrow) {
+    @include font-size(16px);
     padding: 1em 0 1em 116px;
     .field-item:after {
       left: 10px;

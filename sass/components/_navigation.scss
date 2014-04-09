@@ -5,6 +5,8 @@
 #block-mainnavigation {
   position: relative;
   cursor: pointer;
+  font-family: $fontLight;
+  text-transform: uppercase;
   &:after {
     position: absolute;
     padding: 5px 40px;
@@ -21,13 +23,15 @@
     }
   }
   .menu {
-    //display: none;
+    max-height: 0;
     clear: both;
     position: relative;
     padding: 0;
+    margin: 1em;
+    overflow: hidden;
     a {
       display: block;
-      color: white;
+      color: #fff;
       text-decoration: none;
 
     }
@@ -35,27 +39,38 @@
       list-style-type: none;
       text-align: center;
       background-color: rgba(#ccc, .8);
-      margin: .5em 1em;
+      margin: .5em 0;
       @include font-size(25px);
     }
     &.js-nav-open {
-      display: block;
+      max-height: 500px;
     }
     &:before {
       display: block;
       content: "";
       position: absolute;
       height: 60px;
-      width: 1000px;
+      width: 160px;
       right: 100%;
       top: 0;
-      background-color: rgba(#000, .8);
+      background-color: rgba(#fff, .8);
+    }
+    &:after {
+      display: block;
+      content: "";
+      position: absolute;
+      left: 100%;
+      top: 0;
+      border-left: solid 30px rgba(#fff, .8);
+      border-top: solid 30px transparent;
+      border-bottom: solid 30px transparent;
     }
     @include breakpoint($tablet_narrow) {
       clear: none;
-      background-color: rgba(#000, .8);
+      background-color: rgba(#fff, .8);
       margin: 0;
       display: table;
+      overflow: visible;
       li {
         display: table-cell;
         padding: 0 1em 0 0;
@@ -64,7 +79,11 @@
       }
       a {
         line-height: 60px;
+        color: #bbb;
       }
     }
+  }
+  @include breakpoint($tablet_narrow) {
+    cursor: auto;
   }
 }

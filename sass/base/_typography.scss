@@ -8,6 +8,7 @@ html {
 body {
   line-height: 1.7;
   margin: 0;
+  font-family: $fontLight;
 }
 
 // Headings
@@ -54,6 +55,7 @@ h4 {
 
 // Body
 
-div, p, li, blockquote {
+p, li, blockquote {
+  font-family: $fontLight;
   @include font-size(16px);
 }

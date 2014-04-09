@@ -23,8 +23,7 @@ function herchel_theme_suggestions_node_alter(array &$suggestions, array $variab
 /**
  * http://drupal.stackexchange.com/questions/109023/how-do-i-make-a-drupal-8-theme-require-jquery-for-anonymous-users
  */
-function herchel_preprocess_page(&$vars, $hook) {
+function herchel_page_alter(&$page) {
   // Render the library as laid out in herchel.libraries.yml
-  $libraries['#attached']['library'][] = array('herchel', 'herchel-corescripts');
-  drupal_render($libraries);
+  $page['#attached']['library'][] = 'herchel/herchel-corescripts';
 }
