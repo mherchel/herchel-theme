@@ -14,8 +14,11 @@ body {
 // Headings
 
 h1 {
-  font-family: $fontHeading;
-  @include font-size(32px);
+  font-family: $fontRegular;
+  @include font-size(60px);
+  line-height: 1.3;
+  color: #aaa;
+  font-weight: normal;
   a {
     // color
     &:hover {
@@ -25,7 +28,10 @@ h1 {
 }
 h2 {
   font-family: $fontLight;
-  @include font-size(28px);
+  @include font-size(38px);
+  line-height: 1.1;
+  color: #aaa;
+  font-weight: normal;
   a {
     // color
     &:hover {
@@ -36,6 +42,8 @@ h2 {
 h3 {
   font-family: $fontHeading;
   @include font-size(22px);
+  line-height: 1.1;
+  font-weight: normal;
   a {
     // color
     &:hover {
@@ -56,6 +64,6 @@ h4 {
 // Body
 
 p, li, blockquote {
-  font-family: $fontLight;
+  font-family: $fontRegular;
   @include font-size(16px);
 }

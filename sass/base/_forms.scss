@@ -19,8 +19,10 @@ select {
   @include breakpoint($tablet_narrow) {
     width: auto;
   }
-  &:focus {
-  }
+  background: #ddd;
+  padding: .5em;
+  color: #666;
+  border: none;
 }
 
 label {

@@ -10,33 +10,71 @@ ul.tabs:after, ul.tabs:before {
 /* =============================================================================
     Base
    ========================================================================== */
-* {
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
-}
-
 body {
   background-image: url(../images/bg.png);
   color: #666;
 }
 
+.not-front main[role="main"] {
+  background: white;
+  margin-top: -60px;
+}
+
+a {
+  color: #f0652a;
+}
+a:hover {
+  color: #a83a0c;
+}
+
 /* =============================================================================
     Fonts
+    @todo get rid of unused webfonts
    ========================================================================== */
 @font-face {
-  font-family: 'FontAwesome';
-  src: url("../fonts/fontawesome-webfont.eot?v=4.0.3");
-  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff?v=4.0.3") format("woff"), url("../fonts/fontawesome-webfont.ttf?v=4.0.3") format("truetype"), url("../fonts/fontawesome-webfont.svg?v=4.0.3#fontawesomeregular") format("svg");
+  font-family: 'source_sans_prolight';
+  src: url("../fonts/sourcesanspro-light-webfont.eot");
+  src: url("../fonts/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-light-webfont.woff") format("woff"), url("../fonts/sourcesanspro-light-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-light-webfont.svg#source_sans_prolight") format("svg");
   font-weight: normal;
   font-style: normal;
 }
 
 @font-face {
-  font-family: 'source_sans_prolight';
-  src: url("../fonts/sourcesanspro-light-webfont.eot");
-  src: url("../fonts/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-light-webfont.woff") format("woff"), url("../fonts/sourcesanspro-light-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-light-webfont.svg#source_sans_prolight") format("svg");
+  font-family: 'merriweatherbold';
+  src: url("../fonts/merriweather-bold-webfont.eot");
+  src: url("../fonts/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-bold-webfont.woff") format("woff"), url("../fonts/merriweather-bold-webfont.ttf") format("truetype"), url("../fonts/merriweather-bold-webfont.svg#merriweatherbold") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweatheritalic';
+  src: url("../fonts/merriweather-italic-webfont.eot");
+  src: url("../fonts/merriweather-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-italic-webfont.woff") format("woff"), url("../fonts/merriweather-italic-webfont.ttf") format("truetype"), url("../fonts/merriweather-italic-webfont.svg#merriweatheritalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweatherregular';
+  src: url("../fonts/merriweather-regular-webfont.eot");
+  src: url("../fonts/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-regular-webfont.woff") format("woff"), url("../fonts/merriweather-regular-webfont.ttf") format("truetype"), url("../fonts/merriweather-regular-webfont.svg#merriweatherregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweatherlight';
+  src: url("../fonts/merriweather-light-webfont.eot");
+  src: url("../fonts/merriweather-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-light-webfont.woff") format("woff"), url("../fonts/merriweather-light-webfont.ttf") format("truetype"), url("../fonts/merriweather-light-webfont.svg#merriweatherlight") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'merriweatherlight_italic';
+  src: url("../fonts/merriweather-lightitalic-webfont.eot");
+  src: url("../fonts/merriweather-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-lightitalic-webfont.woff") format("woff"), url("../fonts/merriweather-lightitalic-webfont.ttf") format("truetype"), url("../fonts/merriweather-lightitalic-webfont.svg#merriweatherlight_italic") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -58,6 +96,10 @@ select {
   -webkit-appearance: none;
   width: 100%;
   width: auto;
+  background: #ddd;
+  padding: .5em;
+  color: #666;
+  border: none;
 }
 
 label {
@@ -175,21 +217,29 @@ body {
 }
 
 h1 {
-  font-family: source_sans_prolight, helvetica, arial, sans-serif;
-  font-size: 32px;
-  font-size: 2rem;
+  font-family: merriweatherlight, merriweatherregular, georgia, serif;
+  font-size: 60px;
+  font-size: 3.75rem;
+  line-height: 1.3;
+  color: #aaa;
+  font-weight: normal;
 }
 
-h2 {
+h2, .page-node .field-node--field-subheading, .node-type-page .field-node--field-subheading {
   font-family: source_sans_prolight, helvetica, arial, sans-serif;
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-size: 38px;
+  font-size: 2.375rem;
+  line-height: 1.1;
+  color: #aaa;
+  font-weight: normal;
 }
 
 h3 {
   font-family: source_sans_prolight, helvetica, arial, sans-serif;
   font-size: 22px;
   font-size: 1.375rem;
+  line-height: 1.1;
+  font-weight: normal;
 }
 
 h4 {
@@ -197,8 +247,8 @@ h4 {
   font-size: 1.125rem;
 }
 
-p, li, blockquote {
-  font-family: source_sans_prolight, helvetica, arial, sans-serif;
+p, .view-front .field-node--field-subheading, li, blockquote {
+  font-family: merriweatherlight, merriweatherregular, georgia, serif;
   font-size: 16px;
   font-size: 1rem;
 }
@@ -214,11 +264,11 @@ p, li, blockquote {
    ========================================================================== */
 .region-callout-bubble {
   padding: 1em 1em 3em 1em;
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 14px;
+  font-size: 0.875rem;
   font-size: 16px;
   font-size: 1rem;
-  padding: 1em 0 1em 116px;
+  padding: 1em 1em 1em 116px;
 }
 .region-callout-bubble .field-item {
   padding: 5px 20px;
@@ -274,6 +324,22 @@ footer {
 header[role='banner'] {
   clear: both;
   height: 60px;
+  line-height: 60px;
+}
+.js-scroll-down header[role='banner'] {
+  -webkit-box-shadow: 0 5px 20px 10px white;
+  -moz-box-shadow: 0 5px 20px 10px white;
+  box-shadow: 0 5px 20px 10px white;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;
+  top: 0;
+  background: white;
+  overflow: hidden;
+  width: 100%;
+}
+.js-scroll-down header[role='banner'] img {
+  display: none;
 }
 
 .home-link {
@@ -311,7 +377,7 @@ header[role='banner'] {
   font-size: 25px;
   font-size: 1.5625rem;
   font-weight: bold;
-  margin: 1em auto;
+  margin: 2em auto 1em auto;
 }
 
 /* =============================================================================
@@ -322,7 +388,6 @@ header[role='banner'] {
   cursor: pointer;
   font-family: source_sans_prolight, helvetica, arial, sans-serif;
   text-transform: uppercase;
-  cursor: auto;
 }
 #block-mainnavigation:after {
   position: absolute;
@@ -346,7 +411,6 @@ header[role='banner'] {
   margin: 1em;
   overflow: hidden;
   clear: none;
-  background-color: rgba(255, 255, 255, 0.8);
   margin: 0;
   display: table;
   overflow: visible;
@@ -367,7 +431,10 @@ header[role='banner'] {
 #block-mainnavigation .menu.js-nav-open {
   max-height: 500px;
 }
-#block-mainnavigation .menu:before {
+.front #block-mainnavigation .menu {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.front #block-mainnavigation .menu:before {
   display: block;
   content: "";
   position: absolute;
@@ -377,7 +444,7 @@ header[role='banner'] {
   top: 0;
   background-color: rgba(255, 255, 255, 0.8);
 }
-#block-mainnavigation .menu:after {
+.front #block-mainnavigation .menu:after {
   display: block;
   content: "";
   position: absolute;
@@ -394,7 +461,52 @@ header[role='banner'] {
   background-color: transparent;
 }
 #block-mainnavigation .menu a {
-  line-height: 60px;
+  color: #bbb;
+}
+#block-mainnavigation .menu a:hover {
+  color: #aaa;
+}
+#block-mainnavigation .menu a.active {
+  position: relative;
+}
+#block-mainnavigation .menu a.active:after {
+  content: "";
+  position: absolute;
+  display: block;
+  border-top: solid 10px #e5e5e5;
+  border-left: solid 10px transparent;
+  border-right: solid 10px transparent;
+  left: 50%;
+  top: 0;
+  margin-left: -10px;
+}
+
+/* =============================================================================
+    Nodes
+   ========================================================================== */
+.page-node .l-content, .node-type-page .l-content {
+  padding: 1em 0;
+  margin: 2em 1em;
+  font-size: 20px;
+  font-size: 1.25rem;
+  padding: 1px 0;
+  font-size: 24px;
+  font-size: 1.5rem;
+  margin: 1em auto;
+}
+.page-node p, .page-node .view-front .field-node--field-subheading, .view-front .page-node .field-node--field-subheading, .node-type-page p, .node-type-page .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading {
+  font-size: 20px;
+  font-size: 1.25rem;
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+.page-node h1, .node-type-page h1 {
+  margin-bottom: .25em;
+}
+.page-node .field-node--field-subheading, .node-type-page .field-node--field-subheading {
+  font-family: merriweatherlight_italic, merriweatherlight, merriweatherregular, georgia, serif;
+}
+.page-node .submitted, .node-type-page .submitted {
   color: #bbb;
 }
 
@@ -438,7 +550,7 @@ ul.tabs > li a {
   display: block;
   color: #f0652a;
 }
-.view-front h2 {
+.view-front h2, .view-front .page-node .field-node--field-subheading, .page-node .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading, .node-type-page .view-front .field-node--field-subheading {
   font-size: 25px;
   font-size: 1.5625rem;
   margin: 0;
@@ -469,11 +581,11 @@ ul.tabs > li a {
 }
 .view-front .wrap {
   position: relative;
-  -webkit-perspective: 1000;
-  -moz-perspective: 1000;
-  -ms-perspective: 1000;
-  -o-perspective: 1000;
-  perspective: 1000;
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
+  -ms-perspective: 1000px;
+  -o-perspective: 1000px;
+  perspective: 1000px;
 }
 .view-front .wrap:hover a, .view-front .wrap:focus a {
   -webkit-transform: rotateX(180deg);

@@ -3,10 +3,22 @@
    ========================================================================== */
 
 * {
-  @include transition(all .3s);
+ // @include transition(all .3s);
 }
 
 body {
   background-image: url(../images/bg.png);
   color: #666;
+}
+
+.not-front main[role="main"] {
+  background: white;
+  margin-top: -60px;
+}
+
+a {
+  color: $orange;
+  &:hover {
+    color: darken($orange, 20%);
+  }
 }

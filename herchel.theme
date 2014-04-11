@@ -3,8 +3,6 @@
 /**
  * Implements hook_css_alter() to remove core css.
  */
-
-
 function herchel_css_alter(array &$css) {
   unset($css['system.theme.css']);
 }

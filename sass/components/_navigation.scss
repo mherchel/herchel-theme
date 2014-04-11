@@ -7,7 +7,7 @@
   cursor: pointer;
   font-family: $fontLight;
   text-transform: uppercase;
-  &:after {
+  &:after { // Hamburger icon
     position: absolute;
     padding: 5px 40px;
     right: 0;
@@ -22,7 +22,7 @@
       display: none;
     }
   }
-  .menu {
+  .menu { // menu ul
     max-height: 0;
     clear: both;
     position: relative;
@@ -33,7 +33,6 @@
       display: block;
       color: #fff;
       text-decoration: none;
-
     }
     li {
       list-style-type: none;
@@ -45,32 +44,40 @@
     &.js-nav-open {
       max-height: 500px;
     }
-    &:before {
-      display: block;
-      content: "";
-      position: absolute;
-      height: 60px;
-      width: 160px;
-      right: 100%;
-      top: 0;
-      background-color: rgba(#fff, .8);
-    }
-    &:after {
-      display: block;
-      content: "";
-      position: absolute;
-      left: 100%;
-      top: 0;
-      border-left: solid 30px rgba(#fff, .8);
-      border-top: solid 30px transparent;
-      border-bottom: solid 30px transparent;
-    }
+    
     @include breakpoint($tablet_narrow) {
       clear: none;
-      background-color: rgba(#fff, .8);
       margin: 0;
       display: table;
       overflow: visible;
+      //
+      // Frontpage specific styling
+      //
+      .front & {
+        background-color: rgba(#fff, .8);
+      }
+      // Left semi-transparent white block before the nav on the front page
+      .front &:before {
+        display: block;
+        content: "";
+        position: absolute;
+        height: 60px;
+        width: 160px;
+        right: 100%;
+        top: 0;
+        background-color: rgba(#fff, .8);
+      }
+      // Right semi-transparent white arrow after the nav on the front page
+      .front &:after {
+        display: block;
+        content: "";
+        position: absolute;
+        left: 100%;
+        top: 0;
+        border-left: solid 30px rgba(#fff, .8);
+        border-top: solid 30px transparent;
+        border-bottom: solid 30px transparent;
+      }
       li {
         display: table-cell;
         padding: 0 1em 0 0;
@@ -78,12 +85,25 @@
         background-color: transparent;
       }
       a {
-        line-height: 60px;
         color: #bbb;
+        &:hover {
+          color: #aaa;
+        }
+        &.active {
+          position: relative;
+          &:after {
+            content: "";
+            position: absolute;
+            display: block;
+            border-top: solid 10px #e5e5e5;
+            border-left: solid 10px transparent;
+            border-right: solid 10px transparent;
+            left: 50%;
+            top: 0;
+            margin-left: -10px;
+          }
+        }
       }
-    }
-  }
-  @include breakpoint($tablet_narrow) {
-    cursor: auto;
-  }
-}
+    } // End breakpoint($tablet_narrow)
+  } // End .menu
+} // End #block-mainnavigation

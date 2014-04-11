@@ -6,6 +6,20 @@ header[role='banner'] {
   clear: both;
   @include breakpoint($tablet_narrow) {
     height: 60px;
+    line-height: 60px;
+    .js-scroll-down & { // Fixed positition on scroll
+      @include box-shadow(0 5px 20px 10px #fff);
+      height: 40px;
+      line-height: 40px;
+      position: fixed;
+      top: 0;
+      background: white;
+      overflow: hidden;
+      width: 100%;
+      img {
+        display: none;
+      }
+    }    
   }
 }
 .home-link {

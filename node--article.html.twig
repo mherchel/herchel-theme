@@ -84,16 +84,13 @@
     </h2>
   {% endif %}
   {{ title_suffix }}
-
+  {{ content.field_subheading }}
   {% if display_submitted %}
-    <footer>
-      {{ user_picture }}
       <p class="submitted">{{ submitted }}</p>
-    </footer>
   {% endif %}
 
   <div{{ content_attributes }}>
-    {{ content|without('links') }}
+    {{ content|without('links', 'field_subheading') }}
   </div>
 
   {{ content.links }}

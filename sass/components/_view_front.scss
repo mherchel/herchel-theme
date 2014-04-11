@@ -39,6 +39,9 @@
     padding: 1em;
     display: none;
   }
+  .field-node--field-subheading {
+    @extend p;
+  }
   .date {
     color: #ccc;
   }
@@ -50,7 +53,7 @@
   @include breakpoint($normal) {
     .wrap {
       position: relative;
-      @include perspective(1000);
+      @include perspective(1000px);
       &:hover a,
       &:focus a {
          @include transform(rotateX(180deg)); 

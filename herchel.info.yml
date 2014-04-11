@@ -4,13 +4,11 @@ description: 'Blah'
 core: 8.x
 stylesheets:
   all:
+    - css/prism.css
     - css/herchel.css
-  print:
-    - css/print.css
 scripts:
-  # @todo Clean up this ugly hack.
-  # - ../../core/assets/vendor/jquery/jquery.js
   - js/scripts.js
+  - js/prism.js
 ckeditor_stylesheets:
 regions:
   callout_bubble: 'Callout Bubble'
