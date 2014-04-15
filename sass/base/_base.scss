@@ -4,6 +4,11 @@
 
 * {
  // @include transition(all .3s);
+ &::selection {
+  background: $orange;
+  color: white;
+  text-shadow: none;
+ }
 }
 
 body {
@@ -14,10 +19,12 @@ body {
 .not-front main[role="main"] {
   background: white;
   margin-top: -60px;
+  padding-bottom: 1em;
 }
 
 a {
   color: $orange;
+  text-decoration: none;
   &:hover {
     color: darken($orange, 20%);
   }

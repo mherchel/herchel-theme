@@ -10,7 +10,7 @@
   }
   h2 {
     @include font-size(25px);
-    margin: 0;
+    margin: .5em 0;
     line-height: 1.1;
   }
   .views-row {
@@ -41,14 +41,16 @@
   }
   .field-node--field-subheading {
     @extend p;
+    @include font-size(16px);
   }
   .date {
     color: #ccc;
+    @include font-size(16px);
   }
 
-/* =============================================================================
-    3d effects
-   ========================================================================== */
+//  =============================================================================
+//   3d effects
+//  =============================================================================
 
   @include breakpoint($normal) {
     .wrap {
@@ -61,7 +63,12 @@
     }
     a {
       @include transform-style(preserve-3d);
+      // transition that shows on hover-off
       @include transition(all .5s cubic-bezier(.28,.33,.66,1.2)); 
+      &:hover {
+        // transition that shows on hover-over
+        //@include transition(all .5s cubic-bezier(.28,.33,.66,1.2)); 
+      }
     }
     .wrap-front,
     .wrap-back {

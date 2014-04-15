@@ -1,0 +1,18 @@
+/* =============================================================================
+    Misc base styles
+   ========================================================================== */
+
+iframe.twitter-tweet { // Twitter tweets can be blockquotes, too
+  margin: 1em auto !important;
+  @include breakpoint($normal) {
+    @include transform(scale(1.25));
+    margin: 2.5em auto !important;
+  }
+}
+
+.speakerdeck-iframe {
+  @include breakpoint($normal) {
+    @include transform(scale(1.25));
+    margin: 4em auto !important;
+  }
+}

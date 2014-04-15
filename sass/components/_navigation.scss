@@ -68,19 +68,20 @@
         background-color: rgba(#fff, .8);
       }
       // Right semi-transparent white arrow after the nav on the front page
-      .front &:after {
-        display: block;
-        content: "";
-        position: absolute;
-        left: 100%;
-        top: 0;
-        border-left: solid 30px rgba(#fff, .8);
-        border-top: solid 30px transparent;
-        border-bottom: solid 30px transparent;
-      }
+      // .front &:after {
+      //   display: block;
+      //   content: "";
+      //   position: absolute;
+      //   left: 100%;
+      //   top: 0;
+      //   border-left: solid 30px rgba(#fff, .8);
+      //   border-top: solid 30px transparent;
+      //   border-bottom: solid 30px transparent;
+      // }
       li {
         display: table-cell;
-        padding: 0 1em 0 0;
+        @include font-size(20px);
+        padding: 0 2em 0 0;
         margin: 0;
         background-color: transparent;
       }

@@ -13,7 +13,20 @@ body {
 .container {
   margin: 0 auto;
   clear: both;
-    @include breakpoint($normal) {
-      max-width: 900px;
-    }
+  @include breakpoint(900px) {
+    max-width: 900px;
   }
+}
+
+.not-front .l-content {
+  padding: 1em 0;
+  margin: 2em 1em;
+  @include font-size(20px);
+  @include breakpoint($tablet_wide) {
+    padding: 1px 0;
+    @include font-size(24px);
+  }
+  @include breakpoint($normal) {
+    margin: 1em auto;
+  }
+}

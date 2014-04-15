@@ -16,6 +16,7 @@ header[role='banner'] {
       background: white;
       overflow: hidden;
       width: 100%;
+      z-index: 10; // Necessary to clear iframes
       img {
         display: none;
       }
@@ -32,6 +33,6 @@ header[role='banner'] {
     display: block;
   }
   @include breakpoint($tablet_narrow) {
-    margin: -25px 1em 0 0;
+    margin: -25px 2em 0 0;
   }
 }

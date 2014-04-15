@@ -3,18 +3,6 @@
    ========================================================================== */
 
 .page-node, .node-type-page {
-  .l-content {
-    padding: 1em 0;
-    margin: 2em 1em;
-    @include font-size(20px);
-    @include breakpoint($tablet_wide) {
-      padding: 1px 0;
-      @include font-size(24px);
-    }
-    @include breakpoint($normal) {
-      margin: 1em auto;
-    }
-  }
   p {
     @include font-size(20px);
     @include breakpoint($tablet_wide) {

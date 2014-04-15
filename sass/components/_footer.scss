@@ -4,6 +4,75 @@
 
 footer {
   background: $orange;
-  min-height: 300px;
   margin-top: 3em;
 }
+.footer-icons {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+.footer-icon {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: middle;
+  @include font-size(50px);
+  line-height: 1;
+  margin: .5em 10px;
+  a {
+    display: block;
+    height: 50px;
+    width: 50px;
+    text-indent: 100%;
+    overflow: hidden;
+    &:before {
+      text-indent: 0;
+      font-family: FontAwesome;
+      color: white;
+      display: block;
+      position: absolute;
+      left: 0;
+      top: 0;
+    }
+  }
+  @include breakpoint($tablet_narrow) {
+    @include font-size(100px);
+    margin: .5em 0;
+    a {
+      height: 100px;
+      width: 100px;
+      @include transition(transform .25s);
+      @include transform(scale(.5));
+      &:hover {
+        @include transform(scale(1));
+      }
+    }
+  }
+}
+.footer-icon-drupal a {
+  position: relative;
+  top: -3px;
+  background: url(../images/druplicon.vector.edited.svg) no-repeat center;
+  background-size: contain;
+}
+.footer-icon-twitter {
+  a {
+    display: block;
+    position: relative;
+    &:before {
+      content: "\f099";
+      @include font-size(46px); // Magic number
+      @include breakpoint($tablet_narrow) {
+       @include font-size(96px); // Magic number 
+      }
+    }
+  }
+}
+.footer-icon-github {
+  a {
+    display: block;
+    position: relative;
+    &:before {
+      content: "\f09b";
+    }
+  }
+}  

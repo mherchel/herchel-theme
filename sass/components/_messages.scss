@@ -5,11 +5,12 @@
 .messages {
 	clear: both;
   background-color: #eee;
+  color: #999;
   padding: 1em 2em;
   @include font-size(25px);
   font-weight: bold;
   @extend .container;
-  margin: 2em auto 1em auto;
+  margin: 2em auto 3em auto;
 
 }
 

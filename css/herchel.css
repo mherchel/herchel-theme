@@ -1,4 +1,4 @@
-ul.tabs:after, ul.tabs:before {
+.tabs:after, .tabs:before {
   display: table;
   content: "";
   clear: both;
@@ -7,6 +7,12 @@ ul.tabs:after, ul.tabs:before {
 /* =============================================================================
     Base
    ========================================================================== */
+*::selection {
+  background: #f0652a;
+  color: white;
+  text-shadow: none;
+}
+
 body {
   background-image: url(../images/bg.png);
   color: #666;
@@ -15,10 +21,12 @@ body {
 .not-front main[role="main"] {
   background: white;
   margin-top: -60px;
+  padding-bottom: 1em;
 }
 
 a {
   color: #f0652a;
+  text-decoration: none;
 }
 a:hover {
   color: #a83a0c;
@@ -28,6 +36,14 @@ a:hover {
     Fonts
     @todo get rid of unused webfonts
    ========================================================================== */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.0.3") format("embedded-opentype"), url("../fonts/fontawesome-webfont.woff") format("woff"), url("../fonts/fontawesome-webfont.ttf") format("truetype"), url("../fonts/fontawesome-webfont.svg#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'source_sans_prolight';
   src: url("../fonts/sourcesanspro-light-webfont.eot");
@@ -175,9 +191,28 @@ body {
   margin: 0 auto;
   clear: both;
 }
-@media (min-width: 75em) {
+@media (min-width: 56.25em) {
   .container, .region-callout-bubble, .messages {
     max-width: 900px;
+  }
+}
+
+.not-front .l-content {
+  padding: 1em 0;
+  margin: 2em 1em;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+@media (min-width: 56.25em) {
+  .not-front .l-content {
+    padding: 1px 0;
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
+}
+@media (min-width: 75em) {
+  .not-front .l-content {
+    margin: 1em auto;
   }
 }
 
@@ -188,6 +223,34 @@ img, media {
   max-width: 100%;
   height: auto;
   border: 0;
+}
+
+/* =============================================================================
+    Misc base styles
+   ========================================================================== */
+iframe.twitter-tweet {
+  margin: 1em auto !important;
+}
+@media (min-width: 75em) {
+  iframe.twitter-tweet {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+    margin: 2.5em auto !important;
+  }
+}
+
+@media (min-width: 75em) {
+  .speakerdeck-iframe {
+    -webkit-transform: scale(1.25);
+    -moz-transform: scale(1.25);
+    -ms-transform: scale(1.25);
+    -o-transform: scale(1.25);
+    transform: scale(1.25);
+    margin: 4em auto !important;
+  }
 }
 
 /* =============================================================================
@@ -233,22 +296,34 @@ body {
   font-family: source_sans_prolight, helvetica, arial, sans-serif;
 }
 
-h1 {
+h1, .view-blog h2, .view-blog .page-node .field-node--field-subheading, .page-node .view-blog .field-node--field-subheading, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-blog .field-node--field-subheading {
   font-family: merriweatherlight, merriweatherregular, georgia, serif;
-  font-size: 60px;
-  font-size: 3.75rem;
   line-height: 1.3;
+  font-size: 40px;
+  font-size: 2.5rem;
   color: #aaa;
   font-weight: normal;
+}
+@media (min-width: 43.75em) {
+  h1, .view-blog h2, .view-blog .page-node .field-node--field-subheading, .page-node .view-blog .field-node--field-subheading, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-blog .field-node--field-subheading {
+    font-size: 60px;
+    font-size: 3.75rem;
+  }
 }
 
 h2, .page-node .field-node--field-subheading, .node-type-page .field-node--field-subheading {
   font-family: source_sans_prolight, helvetica, arial, sans-serif;
-  font-size: 38px;
-  font-size: 2.375rem;
+  font-size: 28px;
+  font-size: 1.75rem;
   line-height: 1.1;
   color: #aaa;
   font-weight: normal;
+}
+@media (min-width: 43.75em) {
+  h2, .page-node .field-node--field-subheading, .node-type-page .field-node--field-subheading {
+    font-size: 38px;
+    font-size: 2.375rem;
+  }
 }
 
 h3 {
@@ -264,18 +339,18 @@ h4 {
   font-size: 1.125rem;
 }
 
-p, .view-front .field-node--field-subheading, li, blockquote {
+p, .view-blog .field-node--field-subheading, .view-front .field-node--field-subheading, li, blockquote {
   font-family: merriweatherlight, merriweatherregular, georgia, serif;
-  font-size: 16px;
-  font-size: 1rem;
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+@media (min-width: 56.25em) {
+  p, .view-blog .field-node--field-subheading, .view-front .field-node--field-subheading, li, blockquote {
+    font-size: 24px;
+    font-size: 1.5rem;
+  }
 }
 
-/* =============================================================================
-    Aside
-   ========================================================================== */
-/* =============================================================================
-    Branding
-   ========================================================================== */
 /* =============================================================================
     Callout Bubble
    ========================================================================== */
@@ -335,8 +410,97 @@ p, .view-front .field-node--field-subheading, li, blockquote {
    ========================================================================== */
 footer {
   background: #f0652a;
-  min-height: 300px;
   margin-top: 3em;
+}
+
+.footer-icons {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+.footer-icon {
+  list-style-type: none;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 50px;
+  font-size: 3.125rem;
+  line-height: 1;
+  margin: .5em 10px;
+}
+.footer-icon a {
+  display: block;
+  height: 50px;
+  width: 50px;
+  text-indent: 100%;
+  overflow: hidden;
+}
+.footer-icon a:before {
+  text-indent: 0;
+  font-family: FontAwesome;
+  color: white;
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+@media (min-width: 43.75em) {
+  .footer-icon {
+    font-size: 100px;
+    font-size: 6.25rem;
+    margin: .5em 0;
+  }
+  .footer-icon a {
+    height: 100px;
+    width: 100px;
+    -webkit-transition: -webkit-transform 0.25s;
+    -moz-transition: -moz-transform 0.25s;
+    -o-transition: -o-transform 0.25s;
+    transition: transform 0.25s;
+    -webkit-transform: scale(0.5);
+    -moz-transform: scale(0.5);
+    -ms-transform: scale(0.5);
+    -o-transform: scale(0.5);
+    transform: scale(0.5);
+  }
+  .footer-icon a:hover {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -ms-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.footer-icon-drupal a {
+  position: relative;
+  top: -3px;
+  background: url(../images/druplicon.vector.edited.svg) no-repeat center;
+  background-size: contain;
+}
+
+.footer-icon-twitter a {
+  display: block;
+  position: relative;
+}
+.footer-icon-twitter a:before {
+  content: "\f099";
+  font-size: 46px;
+  font-size: 2.875rem;
+}
+@media (min-width: 43.75em) {
+  .footer-icon-twitter a:before {
+    font-size: 96px;
+    font-size: 6rem;
+  }
+}
+
+.footer-icon-github a {
+  display: block;
+  position: relative;
+}
+.footer-icon-github a:before {
+  content: "\f09b";
 }
 
 /* =============================================================================
@@ -361,6 +525,7 @@ header[role='banner'] {
     background: white;
     overflow: hidden;
     width: 100%;
+    z-index: 10;
   }
   .js-scroll-down header[role='banner'] img {
     display: none;
@@ -379,7 +544,7 @@ header[role='banner'] {
 }
 @media (min-width: 43.75em) {
   .home-link {
-    margin: -25px 1em 0 0;
+    margin: -25px 2em 0 0;
   }
 }
 
@@ -402,11 +567,12 @@ header[role='banner'] {
 .messages {
   clear: both;
   background-color: #eee;
+  color: #999;
   padding: 1em 2em;
   font-size: 25px;
   font-size: 1.5625rem;
   font-weight: bold;
-  margin: 2em auto 1em auto;
+  margin: 2em auto 3em auto;
 }
 
 /* =============================================================================
@@ -480,19 +646,11 @@ header[role='banner'] {
     top: 0;
     background-color: rgba(255, 255, 255, 0.8);
   }
-  .front #block-mainnavigation .menu:after {
-    display: block;
-    content: "";
-    position: absolute;
-    left: 100%;
-    top: 0;
-    border-left: solid 30px rgba(255, 255, 255, 0.8);
-    border-top: solid 30px transparent;
-    border-bottom: solid 30px transparent;
-  }
   #block-mainnavigation .menu li {
     display: table-cell;
-    padding: 0 1em 0 0;
+    font-size: 20px;
+    font-size: 1.25rem;
+    padding: 0 2em 0 0;
     margin: 0;
     background-color: transparent;
   }
@@ -521,35 +679,17 @@ header[role='banner'] {
 /* =============================================================================
     Nodes
    ========================================================================== */
-.page-node .l-content, .node-type-page .l-content {
-  padding: 1em 0;
-  margin: 2em 1em;
+.page-node p, .page-node .view-blog .field-node--field-subheading, .view-blog .page-node .field-node--field-subheading, .page-node .view-front .field-node--field-subheading, .view-front .page-node .field-node--field-subheading, .node-type-page p, .node-type-page .view-blog .field-node--field-subheading, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading {
   font-size: 20px;
   font-size: 1.25rem;
 }
 @media (min-width: 56.25em) {
-  .page-node .l-content, .node-type-page .l-content {
-    padding: 1px 0;
+  .page-node p, .page-node .view-blog .field-node--field-subheading, .view-blog .page-node .field-node--field-subheading, .page-node .view-front .field-node--field-subheading, .view-front .page-node .field-node--field-subheading, .node-type-page p, .node-type-page .view-blog .field-node--field-subheading, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading {
     font-size: 24px;
     font-size: 1.5rem;
   }
 }
-@media (min-width: 75em) {
-  .page-node .l-content, .node-type-page .l-content {
-    margin: 1em auto;
-  }
-}
-.page-node p, .page-node .view-front .field-node--field-subheading, .view-front .page-node .field-node--field-subheading, .node-type-page p, .node-type-page .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading {
-  font-size: 20px;
-  font-size: 1.25rem;
-}
-@media (min-width: 56.25em) {
-  .page-node p, .page-node .view-front .field-node--field-subheading, .view-front .page-node .field-node--field-subheading, .node-type-page p, .node-type-page .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading {
-    font-size: 24px;
-    font-size: 1.5rem;
-  }
-}
-.page-node h1, .node-type-page h1 {
+.page-node h1, .page-node .view-blog h2, .view-blog .page-node h2, .view-blog .page-node .field-node--field-subheading, .page-node .view-blog .field-node--field-subheading, .node-type-page h1, .node-type-page .view-blog h2, .view-blog .node-type-page h2, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-blog .field-node--field-subheading {
   margin-bottom: .25em;
 }
 .page-node .field-node--field-subheading, .node-type-page .field-node--field-subheading {
@@ -563,96 +703,264 @@ header[role='banner'] {
     Drupal's Pager
    ========================================================================== */
 /* =============================================================================
-    Drupal's Tabs (Split by Breakpoint)
+    Drupal's Tabs
    ========================================================================== */
-@media (min-width: 0) and ("no-query" true: 43.75em) {
-  ul.tabs {
-    background-color: #eee;
-    border-bottom: none;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    padding-bottom: 1px;
-    display: table-row;
-  }
-  ul.tabs > li {
-    width: 100%;
-    display: table-cell;
-    vertical-align: middle;
-    float: none;
-    line-height: 1.2;
-    margin: 0;
-    text-align: center;
-    text-transform: capitalize;
-    border-right: solid 1px white;
-    position: relative;
-    padding: 20px 0;
-  }
-  ul.tabs > li:first-child:nth-last-child(2n), ul.tabs > li:first-child:nth-last-child(2n) ~ li, ul.tabs > li:first-child:nth-last-child(4n), ul.tabs > li:first-child:nth-last-child(4n) ~ li {
-    width: 50%;
-  }
-  ul.tabs > li:first-child:nth-last-child(3n), ul.tabs > li:first-child:nth-last-child(3n) ~ li {
-    width: 33.33%;
-  }
-  ul.tabs > li.active {
-    background-color: #ccc;
-  }
-  ul.tabs > li.active:after {
-    content: "";
-    width: 0;
-    height: 0;
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    margin-left: -10px;
-    border-left: 10px solid transparent;
-    border-right: 10px solid transparent;
-    border-bottom: 10px solid #fff;
-  }
-  ul.tabs > li:last-child {
-    border: none;
-  }
-  ul.tabs > li a {
-    text-decoration: none;
-    background-color: transparent;
-    display: block;
-  }
-  ul.tabs > li a:hover {
-    background-color: transparent;
-    color: #666;
-  }
+.tabs {
+  background-color: #eee;
+  border-bottom: none;
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+  margin-bottom: 1em;
+  display: table-row;
+}
+.tabs > li {
+  width: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  float: none;
+  line-height: 1.2;
+  margin: 0;
+  text-align: center;
+  text-transform: capitalize;
+  border-right: solid 1px white;
+  position: relative;
+  padding: 20px 0;
 }
 @media (min-width: 43.75em) {
-  ul.tabs {
-    margin-bottom: 1em;
-    border-bottom: 1px solid #bbb;
-    padding: 0;
-  }
-  ul.tabs > li {
-    list-style: none;
+  .tabs > li {
+    width: auto;
+    display: block;
     float: left;
     margin-right: 1em;
     background-color: #eee;
-  }
-  ul.tabs > li.active {
-    background-color: #ccc;
-  }
-  ul.tabs > li a {
-    text-decoration: none;
-    display: block;
-    padding: 5px 10px;
-    width: 100%;
+    padding: 0;
   }
 }
+.tabs > li:first-child:nth-last-child(2n), .tabs > li:first-child:nth-last-child(2n) ~ li, .tabs > li:first-child:nth-last-child(4n), .tabs > li:first-child:nth-last-child(4n) ~ li {
+  width: 50%;
+}
+@media (min-width: 43.75em) {
+  .tabs > li:first-child:nth-last-child(2n), .tabs > li:first-child:nth-last-child(2n) ~ li, .tabs > li:first-child:nth-last-child(4n), .tabs > li:first-child:nth-last-child(4n) ~ li {
+    width: auto;
+  }
+}
+.tabs > li:first-child:nth-last-child(3n), .tabs > li:first-child:nth-last-child(3n) ~ li {
+  width: 33.33%;
+}
+@media (min-width: 43.75em) {
+  .tabs > li:first-child:nth-last-child(3n), .tabs > li:first-child:nth-last-child(3n) ~ li {
+    width: auto;
+  }
+}
+.tabs > li.active {
+  background-color: #ccc;
+}
+.tabs > li.active:after {
+  content: "";
+  width: 0;
+  height: 0;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  margin-left: -10px;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid #fff;
+}
+@media (min-width: 43.75em) {
+  .tabs > li.active:after {
+    border: 0;
+  }
+}
+.tabs > li:last-child {
+  border: none;
+}
+.tabs > li a {
+  text-decoration: none;
+  background-color: transparent;
+  display: block;
+}
+.tabs > li a:hover {
+  background-color: transparent;
+  color: #666;
+}
+@media (min-width: 43.75em) {
+  .tabs > li a {
+    padding: .5em 1em;
+  }
+}
+@media (min-width: 43.75em) {
+  .tabs {
+    display: block;
+    margin-bottom: 1em;
+    border-bottom: 1px solid #bbb;
+    padding: 0;
+    background-color: transparent;
+  }
+}
+
+/* =============================================================================
+    Navbar Toolbar
+   ========================================================================== */
+#toolbar-administration li, #toolbar-administration p, #toolbar-administration .view-blog .field-node--field-subheading, .view-blog #toolbar-administration .field-node--field-subheading, #toolbar-administration .view-front .field-node--field-subheading, .view-front #toolbar-administration .field-node--field-subheading, #toolbar-administration div {
+  font-size: 13px;
+  font-size: 0.8125rem;
+  font-family: sans-serif;
+}
+
+/* =============================================================================
+    Theming the javascript twitter feed
+   ========================================================================== */
+#twitter-feed ul {
+  padding: 0;
+}
+#twitter-feed li {
+  padding: 20px 10px;
+  list-style-type: none;
+  border-bottom: solid 1px #eee;
+}
+#twitter-feed li:last-child {
+  border-bottom: none;
+}
+#twitter-feed li:hover {
+  background-color: #f5f5f5;
+}
+#twitter-feed a {
+  word-break: break-all;
+}
+#twitter-feed img {
+  float: left;
+  position: relative;
+  top: 9px;
+  margin-right: 20px;
+  border-radius: 50%;
+  -webkit-transform: scale(1.5);
+  -moz-transform: scale(1.5);
+  -ms-transform: scale(1.5);
+  -o-transform: scale(1.5);
+  transform: scale(1.5);
+}
+@media (min-width: 56.25em) {
+  #twitter-feed img {
+    top: 14px;
+  }
+}
+#twitter-feed .tweet {
+  font-size: 1em;
+}
+#twitter-feed p, #twitter-feed .view-blog .field-node--field-subheading, .view-blog #twitter-feed .field-node--field-subheading, #twitter-feed .view-front .field-node--field-subheading, .view-front #twitter-feed .field-node--field-subheading {
+  margin: 0;
+}
+#twitter-feed .user .span {
+  display: block;
+}
+#twitter-feed .timePosted {
+  font-style: italic;
+  float: left;
+  margin-top: .5em;
+  color: #aaa;
+  font-size: 16px;
+  font-size: 1rem;
+}
+#twitter-feed .interact {
+  text-align: right;
+  margin-top: .5em;
+  font-size: 16px;
+  font-size: 1rem;
+}
+#twitter-feed .interact a {
+  color: #ddd;
+  margin: 0 5px;
+}
+#twitter-feed .interact:hover a {
+  color: #aaa;
+}
+#twitter-feed .interact:hover a:hover {
+  color: #666;
+}
+
+/* =============================================================================
+    View Blog
+   ========================================================================== */
+.view-blog a {
+  display: block;
+  color: #f0652a;
+}
+.view-blog a:hover h2, .view-blog a:hover .page-node .field-node--field-subheading, .page-node .view-blog a:hover .field-node--field-subheading, .view-blog a:hover .node-type-page .field-node--field-subheading, .node-type-page .view-blog a:hover .field-node--field-subheading {
+  color: #999;
+}
+.view-blog a:hover .wrap-front {
+  border-color: #999;
+}
+.view-blog h2, .view-blog .page-node .field-node--field-subheading, .page-node .view-blog .field-node--field-subheading, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-blog .field-node--field-subheading {
+  font-size: 40px;
+  font-size: 2.5rem;
+  margin-bottom: .25em;
+  text-align: center;
+}
+@media (min-width: 43.75em) {
+  .view-blog h2, .view-blog .page-node .field-node--field-subheading, .page-node .view-blog .field-node--field-subheading, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-blog .field-node--field-subheading {
+    text-align: left;
+    margin-bottom: .5em;
+  }
+}
+@media (min-width: 30em) {
+  .view-blog .views-row {
+    padding: 1em;
+  }
+}
+@media (min-width: 56.25em) {
+  .view-blog .views-row {
+    padding: 1em 0;
+  }
+}
+.view-blog .wrap-front {
+  padding: 2em 1em;
+  background-color: white;
+  text-align: center;
+  border: solid 1px #ccc;
+  height: 240px;
+  margin: 1em;
+}
+@media (min-width: 43.75em) {
+  .view-blog .wrap-front {
+    float: left;
+    width: 240px;
+    margin: 0 2em 0 0;
+  }
+}
+.view-blog .field-node--field-subheading {
+  text-align: center;
+  font-size: 16px;
+  font-size: 1rem;
+}
+.view-blog .field-node--field-subheading:empty {
+  display: none;
+}
+@media (min-width: 43.75em) {
+  .view-blog .field-node--field-subheading {
+    text-align: left;
+  }
+}
+.view-blog .date {
+  color: #ccc;
+  text-align: center;
+  margin-top: .5em;
+  font-size: 16px;
+  font-size: 1rem;
+}
+@media (min-width: 43.75em) {
+  .view-blog .date {
+    margin-top: 1em;
+    text-align: left;
+  }
+}
+
 /* =============================================================================
     View Front (frontpage)
     @todo integrate with modernizr
    ========================================================================== */
-.view-front {
-  /* =============================================================================
-      3d effects
-     ========================================================================== */
-}
 .view-front a {
   display: block;
   color: #f0652a;
@@ -660,7 +968,7 @@ header[role='banner'] {
 .view-front h2, .view-front .page-node .field-node--field-subheading, .page-node .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading, .node-type-page .view-front .field-node--field-subheading {
   font-size: 25px;
   font-size: 1.5625rem;
-  margin: 0;
+  margin: .5em 0;
   line-height: 1.1;
 }
 .view-front .views-row {
@@ -696,8 +1004,14 @@ header[role='banner'] {
   padding: 1em;
   display: none;
 }
+.view-front .field-node--field-subheading {
+  font-size: 16px;
+  font-size: 1rem;
+}
 .view-front .date {
   color: #ccc;
+  font-size: 16px;
+  font-size: 1rem;
 }
 @media (min-width: 75em) {
   .view-front .wrap {

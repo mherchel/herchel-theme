@@ -9,6 +9,7 @@ stylesheets:
 scripts:
   - js/scripts.js
   - js/prism.js
+  - js/twitterFetcher_v10_min.js
 ckeditor_stylesheets:
 regions:
   callout_bubble: 'Callout Bubble'
