@@ -32,6 +32,31 @@ a:hover {
   color: #a83a0c;
 }
 
+ol, ul {
+  padding-left: 20px;
+}
+@media (min-width: 43.75em) {
+  ol, ul {
+    padding-left: 40px;
+  }
+}
+
+pre {
+  line-height: 1.4;
+}
+
+code {
+  font-size: 16px;
+  font-size: 1rem;
+  overflow-x: scroll;
+}
+@media (min-width: 43.75em) {
+  code {
+    font-size: 20px;
+    font-size: 1.25rem;
+  }
+}
+
 /* =============================================================================
     Fonts
     @todo get rid of unused webfonts
@@ -43,7 +68,6 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'source_sans_prolight';
   src: url("../fonts/sourcesanspro-light-webfont.eot");
@@ -51,7 +75,6 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'merriweatherbold';
   src: url("../fonts/merriweather-bold-webfont.eot");
@@ -59,7 +82,6 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'merriweatheritalic';
   src: url("../fonts/merriweather-italic-webfont.eot");
@@ -67,7 +89,6 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'merriweatherregular';
   src: url("../fonts/merriweather-regular-webfont.eot");
@@ -75,7 +96,6 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'merriweatherlight';
   src: url("../fonts/merriweather-light-webfont.eot");
@@ -83,7 +103,6 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
-
 @font-face {
   font-family: 'merriweatherlight_italic';
   src: url("../fonts/merriweather-lightitalic-webfont.eot");
@@ -91,7 +110,6 @@ a:hover {
   font-weight: normal;
   font-style: normal;
 }
-
 /* =============================================================================
     Forms
    ========================================================================== */
@@ -178,8 +196,8 @@ input[type="submit"]:last-child {
     Layouts
    ========================================================================== */
 *, *:before, *:after {
-  -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -233,10 +251,9 @@ iframe.twitter-tweet {
 }
 @media (min-width: 75em) {
   iframe.twitter-tweet {
-    -webkit-transform: scale(1.25);
     -moz-transform: scale(1.25);
     -ms-transform: scale(1.25);
-    -o-transform: scale(1.25);
+    -webkit-transform: scale(1.25);
     transform: scale(1.25);
     margin: 2.5em auto !important;
   }
@@ -244,13 +261,19 @@ iframe.twitter-tweet {
 
 @media (min-width: 75em) {
   .speakerdeck-iframe {
-    -webkit-transform: scale(1.25);
     -moz-transform: scale(1.25);
     -ms-transform: scale(1.25);
-    -o-transform: scale(1.25);
+    -webkit-transform: scale(1.25);
     transform: scale(1.25);
     margin: 4em auto !important;
   }
+}
+
+.code-block {
+  padding: 1em !important;
+  margin: .5em 0 !important;
+  display: block;
+  line-height: 1.4;
 }
 
 /* =============================================================================
@@ -352,6 +375,12 @@ p, .view-blog .field-node--field-subheading, .view-front .field-node--field-subh
 }
 
 /* =============================================================================
+    Aside
+   ========================================================================== */
+/* =============================================================================
+    Branding
+   ========================================================================== */
+/* =============================================================================
     Callout Bubble
    ========================================================================== */
 .region-callout-bubble {
@@ -376,10 +405,9 @@ p, .view-blog .field-node--field-subheading, .view-front .field-node--field-subh
   border-top-color: white;
   border-left: 0px solid transparent;
   border-right: 30px solid transparent;
-  -webkit-transform: skew(-30deg);
   -moz-transform: skew(-30deg);
   -ms-transform: skew(-30deg);
-  -o-transform: skew(-30deg);
+  -webkit-transform: skew(-30deg);
   transform: skew(-30deg);
 }
 @media (min-width: 43.75em) {
@@ -394,10 +422,9 @@ p, .view-blog .field-node--field-subheading, .view-front .field-node--field-subh
     border-top-color: white;
     border-left: 0px solid transparent;
     border-right: 20px solid transparent;
-    -webkit-transform: skew(-45deg);
     -moz-transform: skew(-45deg);
     -ms-transform: skew(-45deg);
-    -o-transform: skew(-45deg);
+    -webkit-transform: skew(-45deg);
     transform: skew(-45deg);
   }
 }
@@ -453,21 +480,19 @@ footer {
   .footer-icon a {
     height: 100px;
     width: 100px;
-    -webkit-transition: -webkit-transform 0.25s;
     -moz-transition: -moz-transform 0.25s;
     -o-transition: -o-transform 0.25s;
+    -webkit-transition: -webkit-transform 0.25s;
     transition: transform 0.25s;
-    -webkit-transform: scale(0.5);
     -moz-transform: scale(0.5);
     -ms-transform: scale(0.5);
-    -o-transform: scale(0.5);
+    -webkit-transform: scale(0.5);
     transform: scale(0.5);
   }
   .footer-icon a:hover {
-    -webkit-transform: scale(1);
     -moz-transform: scale(1);
     -ms-transform: scale(1);
-    -o-transform: scale(1);
+    -webkit-transform: scale(1);
     transform: scale(1);
   }
 }
@@ -515,8 +540,8 @@ header[role='banner'] {
     line-height: 60px;
   }
   .js-scroll-down header[role='banner'] {
-    -webkit-box-shadow: 0 5px 20px 10px white;
     -moz-box-shadow: 0 5px 20px 10px white;
+    -webkit-box-shadow: 0 5px 20px 10px white;
     box-shadow: 0 5px 20px 10px white;
     height: 40px;
     line-height: 40px;
@@ -708,8 +733,8 @@ header[role='banner'] {
 .tabs {
   background-color: #eee;
   border-bottom: none;
-  -webkit-box-sizing: content-box;
   -moz-box-sizing: content-box;
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   margin-bottom: 1em;
   display: table-row;
@@ -835,10 +860,9 @@ header[role='banner'] {
   top: 9px;
   margin-right: 20px;
   border-radius: 50%;
-  -webkit-transform: scale(1.5);
   -moz-transform: scale(1.5);
   -ms-transform: scale(1.5);
-  -o-transform: scale(1.5);
+  -webkit-transform: scale(1.5);
   transform: scale(1.5);
 }
 @media (min-width: 56.25em) {
@@ -1016,28 +1040,23 @@ header[role='banner'] {
 @media (min-width: 75em) {
   .view-front .wrap {
     position: relative;
-    -webkit-perspective: 1000px;
     -moz-perspective: 1000px;
-    -ms-perspective: 1000px;
-    -o-perspective: 1000px;
+    -webkit-perspective: 1000px;
     perspective: 1000px;
   }
   .view-front .wrap:hover a, .view-front .wrap:focus a {
-    -webkit-transform: rotateX(180deg);
     -moz-transform: rotateX(180deg);
     -ms-transform: rotateX(180deg);
-    -o-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
   }
   .view-front a {
-    -webkit-transform-style: preserve-3d;
     -moz-transform-style: preserve-3d;
-    -ms-transform-style: preserve-3d;
-    -o-transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
     transform-style: preserve-3d;
-    -webkit-transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
     -moz-transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
     -o-transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
+    -webkit-transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
     transition: all 0.5s cubic-bezier(0.28, 0.33, 0.66, 1.2);
   }
   .view-front .wrap-front,
@@ -1047,20 +1066,17 @@ header[role='banner'] {
     left: 0;
     top: 0;
     margin: 0;
-    -webkit-backface-visibility: hidden;
     -moz-backface-visibility: hidden;
-    -ms-backface-visibility: hidden;
-    -o-backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
   }
   .view-front .wrap-front {
     position: relative;
   }
   .view-front .wrap-back {
-    -webkit-transform: rotateX(180deg);
     -moz-transform: rotateX(180deg);
     -ms-transform: rotateX(180deg);
-    -o-transform: rotateX(180deg);
+    -webkit-transform: rotateX(180deg);
     transform: rotateX(180deg);
   }
 }

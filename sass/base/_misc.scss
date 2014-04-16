@@ -16,3 +16,10 @@ iframe.twitter-tweet { // Twitter tweets can be blockquotes, too
     margin: 4em auto !important;
   }
 }
+
+.code-block {  // A small hack for prism.js
+  padding: 1em !important;
+  margin: .5em 0 !important;
+  display: block;
+  line-height: 1.4;
+}

@@ -29,3 +29,22 @@ a {
     color: darken($orange, 20%);
   }
 }
+
+ol, ul {
+  padding-left: 20px;
+  @include breakpoint($tablet_narrow) {
+    padding-left: 40px;
+  }
+}
+
+pre {
+  line-height: 1.4;
+}
+
+code {
+  @include font-size(16px);
+  overflow-x: scroll;
+  @include breakpoint($tablet_narrow) {
+    @include font-size(20px);
+  }
+}
