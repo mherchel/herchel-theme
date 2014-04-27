@@ -6,6 +6,8 @@ stylesheets:
   all:
     - css/prism.css
     - css/herchel.css
+  print:
+    - css/print.css
 scripts:
   - js/scripts.js
   - js/prism.js

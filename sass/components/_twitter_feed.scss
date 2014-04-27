@@ -1,9 +1,6 @@
-
-
 /* =============================================================================
     Theming the javascript twitter feed
    ========================================================================== */
-
 
  #twitter-feed {
   ul {
@@ -46,7 +43,7 @@
     }
   }
   .timePosted {
-    font-style: italic;
+    @extend em; // italic
     float: left;
     margin-top: .5em;
     color: #aaa;

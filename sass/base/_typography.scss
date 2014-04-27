@@ -1,5 +1,6 @@
 /* =============================================================================
     Typography
+    @todo blockquote
    ========================================================================== */
 
 html {
@@ -9,6 +10,10 @@ body {
   line-height: 1.7;
   margin: 0;
   font-family: $fontLight;
+}
+em {
+  font-style: normal;
+  font-family: $fontitalic;
 }
 
 // Headings
@@ -30,13 +35,13 @@ h1 {
   }
 }
 h2 {
-  font-family: $fontLight;
-  @include font-size(28px);
+  font-family: $fontRegular;
+  @include font-size(32px);
   line-height: 1.1;
-  color: #aaa;
+  color: #666;
   font-weight: normal;
   @include breakpoint($tablet_narrow) {
-    @include font-size(38px);
+    @include font-size(48px);
   }
   a {
     // color
@@ -46,10 +51,14 @@ h2 {
   }
 }
 h3 {
-  font-family: $fontHeading;
-  @include font-size(22px);
+  font-family: $fontRegular;
+  @include font-size(24px);
   line-height: 1.1;
+  color: #666;
   font-weight: normal;
+  @include breakpoint($tablet_narrow) {
+    @include font-size(32px);
+  }
   a {
     // color
     &:hover {

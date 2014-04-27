@@ -2,9 +2,34 @@
     Print Styles
    ========================================================================== */
 
+.tabs,
+header[role="banner"],
 #sidebar-first,
 #navigation,
+footer,
 #block-system-main-menu,
-#footer {
+#toolbar-administration {
   display: none;
+}
+
+body {
+  padding-top: 0 !important; // Removing toolbar padding
+}
+
+code, pre {
+  page-break-inside: avoid;
+  word-break:break-all;
+}
+
+p, li, blockquote {
+  font-size: 16px !important;
+}
+
+.region-content a {
+  font-weight: bold;
+  color: #333 !important;
+  &[href^=http]:after {
+    content:" (" attr(href) ") ";
+    color: #666;
+  }
 }

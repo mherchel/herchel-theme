@@ -9,6 +9,8 @@
 
 /* =============================================================================
     Base
+    @todo blockquote
+    @todo transitions
    ========================================================================== */
 *::selection {
   background: #f0652a;
@@ -64,20 +66,6 @@ code {
   font-style: normal;
 }
 @font-face {
-  font-family: 'source_sans_prolight';
-  src: url("../fonts/sourcesanspro-light-webfont.eot");
-  src: url("../fonts/sourcesanspro-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/sourcesanspro-light-webfont.woff") format("woff"), url("../fonts/sourcesanspro-light-webfont.ttf") format("truetype"), url("../fonts/sourcesanspro-light-webfont.svg#source_sans_prolight") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'merriweatherbold';
-  src: url("../fonts/merriweather-bold-webfont.eot");
-  src: url("../fonts/merriweather-bold-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-bold-webfont.woff") format("woff"), url("../fonts/merriweather-bold-webfont.ttf") format("truetype"), url("../fonts/merriweather-bold-webfont.svg#merriweatherbold") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'merriweatheritalic';
   src: url("../fonts/merriweather-italic-webfont.eot");
   src: url("../fonts/merriweather-italic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-italic-webfont.woff") format("woff"), url("../fonts/merriweather-italic-webfont.ttf") format("truetype"), url("../fonts/merriweather-italic-webfont.svg#merriweatheritalic") format("svg");
@@ -85,23 +73,9 @@ code {
   font-style: normal;
 }
 @font-face {
-  font-family: 'merriweatherregular';
-  src: url("../fonts/merriweather-regular-webfont.eot");
-  src: url("../fonts/merriweather-regular-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-regular-webfont.woff") format("woff"), url("../fonts/merriweather-regular-webfont.ttf") format("truetype"), url("../fonts/merriweather-regular-webfont.svg#merriweatherregular") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
   font-family: 'merriweatherlight';
   src: url("../fonts/merriweather-light-webfont.eot");
   src: url("../fonts/merriweather-light-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-light-webfont.woff") format("woff"), url("../fonts/merriweather-light-webfont.ttf") format("truetype"), url("../fonts/merriweather-light-webfont.svg#merriweatherlight") format("svg");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: 'merriweatherlight_italic';
-  src: url("../fonts/merriweather-lightitalic-webfont.eot");
-  src: url("../fonts/merriweather-lightitalic-webfont.eot?#iefix") format("embedded-opentype"), url("../fonts/merriweather-lightitalic-webfont.woff") format("woff"), url("../fonts/merriweather-lightitalic-webfont.ttf") format("truetype"), url("../fonts/merriweather-lightitalic-webfont.svg#merriweatherlight_italic") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -169,6 +143,18 @@ input[type="submit"]:last-child {
 }
 .form-item.form-type-radio:last-child {
   margin-right: 0;
+}
+
+/* =============================================================================
+    Helper classes
+   ========================================================================== */
+.image-credit {
+  text-align: right;
+  font-size: 16px !important;
+  font-size: 1rem !important;
+}
+.image-credit:before {
+  content: "Image credit: ";
 }
 
 /* =============================================================================
@@ -268,6 +254,7 @@ fieldset {
 
 /* =============================================================================
     Typography
+    @todo blockquote
    ========================================================================== */
 html {
   font-size: 100%;
@@ -276,11 +263,16 @@ html {
 body {
   line-height: 1.7;
   margin: 0;
-  font-family: source_sans_prolight, helvetica, arial, sans-serif;
+  font-family: merriweatherlight, georgia, serif;
+}
+
+em, #twitter-feed .timePosted, .view-blog .field-node--field-subheading {
+  font-style: normal;
+  font-family: merriweatherlight_italic, merriweatherlight, georgia, serif;
 }
 
 h1, .view-blog h2, .view-blog .page-node .field-node--field-subheading, .page-node .view-blog .field-node--field-subheading, .view-blog .node-type-page .field-node--field-subheading, .node-type-page .view-blog .field-node--field-subheading {
-  font-family: merriweatherlight, merriweatherregular, georgia, serif;
+  font-family: merriweatherlight, georgia, serif;
   line-height: 1.3;
   font-size: 40px;
   font-size: 2.5rem;
@@ -291,22 +283,25 @@ h1, .view-blog h2, .view-blog .page-node .field-node--field-subheading, .page-no
 }
 
 h2, .page-node .field-node--field-subheading, .node-type-page .field-node--field-subheading {
-  font-family: source_sans_prolight, helvetica, arial, sans-serif;
-  font-size: 28px;
-  font-size: 1.75rem;
+  font-family: merriweatherlight, georgia, serif;
+  font-size: 32px;
+  font-size: 2rem;
   line-height: 1.1;
-  color: #aaa;
+  color: #666;
   font-weight: normal;
-  font-size: 38px;
-  font-size: 2.375rem;
+  font-size: 48px;
+  font-size: 3rem;
 }
 
 h3 {
-  font-family: source_sans_prolight, helvetica, arial, sans-serif;
-  font-size: 22px;
-  font-size: 1.375rem;
+  font-family: merriweatherlight, georgia, serif;
+  font-size: 24px;
+  font-size: 1.5rem;
   line-height: 1.1;
+  color: #666;
   font-weight: normal;
+  font-size: 32px;
+  font-size: 2rem;
 }
 
 h4 {
@@ -315,19 +310,13 @@ h4 {
 }
 
 p, .view-blog .field-node--field-subheading, .view-front .field-node--field-subheading, li, blockquote {
-  font-family: merriweatherlight, merriweatherregular, georgia, serif;
+  font-family: merriweatherlight, georgia, serif;
   font-size: 20px;
   font-size: 1.25rem;
   font-size: 24px;
   font-size: 1.5rem;
 }
 
-/* =============================================================================
-    Aside
-   ========================================================================== */
-/* =============================================================================
-    Branding
-   ========================================================================== */
 /* =============================================================================
     Callout Bubble
    ========================================================================== */
@@ -373,9 +362,6 @@ p, .view-blog .field-node--field-subheading, .view-front .field-node--field-subh
   transform: skew(-45deg);
 }
 
-/* =============================================================================
-    Comments
-   ========================================================================== */
 /* =============================================================================
     Footer Section
    ========================================================================== */
@@ -479,6 +465,7 @@ header[role='banner'] {
   height: 40px;
   line-height: 40px;
   position: fixed;
+  padding-left: 1em;
   top: 0;
   background: white;
   overflow: hidden;
@@ -534,7 +521,7 @@ header[role='banner'] {
 #block-mainnavigation {
   position: relative;
   cursor: pointer;
-  font-family: source_sans_prolight, helvetica, arial, sans-serif;
+  font-family: merriweatherlight, georgia, serif;
   text-transform: uppercase;
 }
 #block-mainnavigation:after {
@@ -634,7 +621,8 @@ header[role='banner'] {
   margin-bottom: .25em;
 }
 .page-node .field-node--field-subheading, .node-type-page .field-node--field-subheading {
-  font-family: merriweatherlight_italic, merriweatherlight, merriweatherregular, georgia, serif;
+  font-family: merriweatherlight_italic, merriweatherlight, georgia, serif;
+  color: #aaa;
 }
 .page-node .submitted, .node-type-page .submitted {
   color: #bbb;
@@ -768,7 +756,6 @@ header[role='banner'] {
   display: block;
 }
 #twitter-feed .timePosted {
-  font-style: italic;
   float: left;
   margin-top: .5em;
   color: #aaa;
@@ -823,15 +810,27 @@ header[role='banner'] {
   border: solid 1px #ccc;
   height: 240px;
   margin: 1em;
+  position: relative;
   float: left;
   width: 240px;
   margin: 0 2em 0 0;
+}
+.view-blog .wrap-front img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
 .view-blog .field-node--field-subheading {
   text-align: center;
   font-size: 16px;
   font-size: 1rem;
   text-align: left;
+  font-size: 20px;
+  font-size: 1.25rem;
 }
 .view-blog .field-node--field-subheading:empty {
   display: none;
@@ -855,10 +854,10 @@ header[role='banner'] {
   color: #f0652a;
 }
 .view-front h2, .view-front .page-node .field-node--field-subheading, .page-node .view-front .field-node--field-subheading, .view-front .node-type-page .field-node--field-subheading, .node-type-page .view-front .field-node--field-subheading {
-  font-size: 25px;
-  font-size: 1.5625rem;
+  font-size: 22px;
+  font-size: 1.375rem;
   margin: .5em 0;
-  line-height: 1.1;
+  line-height: 1.3;
 }
 .view-front .views-row {
   padding: 1em;
@@ -883,6 +882,7 @@ header[role='banner'] {
 .view-front .field-node--field-subheading {
   font-size: 16px;
   font-size: 1rem;
+  line-height: 1.4;
 }
 .view-front .date {
   color: #ccc;

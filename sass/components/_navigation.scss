@@ -44,7 +44,7 @@
     &.js-nav-open {
       max-height: 500px;
     }
-    
+
     @include breakpoint($tablet_narrow) {
       clear: none;
       margin: 0;
@@ -67,17 +67,6 @@
         top: 0;
         background-color: rgba(#fff, .8);
       }
-      // Right semi-transparent white arrow after the nav on the front page
-      // .front &:after {
-      //   display: block;
-      //   content: "";
-      //   position: absolute;
-      //   left: 100%;
-      //   top: 0;
-      //   border-left: solid 30px rgba(#fff, .8);
-      //   border-top: solid 30px transparent;
-      //   border-bottom: solid 30px transparent;
-      // }
       li {
         display: table-cell;
         @include font-size(20px);
